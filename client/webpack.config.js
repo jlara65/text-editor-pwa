@@ -22,6 +22,32 @@ module.exports = () => {
         template: './index.html',
         title: 'Webpack Plugin',
       }),
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'service-worker.js',
+      }),
+      new WebpackPwaManifest({
+        name: 'JATE',
+        short_name: 'JATE',
+        description: 'Just Another Text Editor',
+        background_color: '#225ca3',
+        theme_color: '#225ca3',
+        start_url: '/',
+        publicPath: './',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: [96, 128, 192, 256, 384, 512],
+            destination: path.join('assets', 'icons'),
+          },
+          {
+            src: path.resolve('src/images/logo.png'),
+            size: '96x96',
+            destination: path.join('assets', 'icons'),
+            purpose: 'maskable',
+          },
+        ],
+      }),
     ],
 
     module: {
@@ -36,7 +62,11 @@ module.exports = () => {
           use: {
             loader: 'babel-loader',
             options: {
-              presets: [['@babel/preset-env', { targets: 'defaults' }]],
+              presets: ['@babel/preset-env'],
+              plugins: [
+                '@babel/plugin-proposal-object-rest-spread',
+                '@babel/transform-runtime',
+              ],
             },
           },
         },
