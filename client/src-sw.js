@@ -26,12 +26,14 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-// TODO: Implement asset caching
+// Set up asset cache
 registerRoute(
   ({ request }) => request.destination === 'image',
+  // define the callback function to filter the requests to cache
   new CacheFirst({
     cacheName: 'assets',
     plugins: [
+      // Plugin will cache responses with headers to a maximum age of 30 days.
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
