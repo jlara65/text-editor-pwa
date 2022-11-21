@@ -22,7 +22,7 @@ The application is a web text editor where user can create notes or code snippet
 
 ## Usage
 
-The Text-Editor application is currently deployed with [Heroku](https://google.com/news)
+The Text-Editor application is currently deployed with [Heroku](https://fathomless-mountain-60724.herokuapp.com/)
 
 Run the following command at the root of your project.
 
