@@ -29,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/jlara65/text-editor-pwa/issues"
   },
-  "homepage": "https://github.com/jlara65/text-editor-pwa#readme"
+  "homepage": "https://github.com/jlara65/text-editor-pwa#readme",
+  "engines": {
+    "node": "16.x"
+  }
 }
