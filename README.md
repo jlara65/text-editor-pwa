@@ -30,7 +30,7 @@ Run the following command at the root of your project.
 2. Open browser and enter the address `http://localhost:3000`
 
 - Application installed to the local computer
-  ![Screenshot](./images/install-app.png)
+  ![Screenshot](./images/Install-app.png)
 
 - Service Worker active
   ![Screenshot](./images/Service-Worker.png)
